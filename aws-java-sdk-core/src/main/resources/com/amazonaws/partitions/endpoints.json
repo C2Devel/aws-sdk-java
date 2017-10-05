@@ -2066,6 +2066,48 @@
         }
       }
     }
-  } ],
+  }, {
+      "defaults": {
+        "protocols": ["https"],
+        "signatureVersions": ["v4"]
+      },
+      "dnsSuffix": "cloud.croc.ru",
+      "partition": "croc",
+      "partitionName": "CROC Cloud",
+      "regionRegex": "^croc$",
+      "regions": {
+        "croc": {
+          "description": "Main CROC Cloud region"
+        }
+      },
+      "services": {
+        "ec2": {
+          "defaults": {
+            "hostname": "api.cloud.{region}.ru"
+          },
+          "endpoints": {
+            "croc": { }
+          }
+        },
+        "monitoring": {
+          "defaults": {
+            "hostname": "monitoring.cloud.{region}.ru"
+          },
+          "endpoints": {
+            "croc": { }
+          }
+        },
+        "s3": {
+          "defaults": {
+            "signatureVersions" : [ "s3" ],
+            "protocols" : [ "http", "https" ],
+            "hostname": "storage.cloud.{region}.ru"
+          },
+          "endpoints": {
+            "croc": { }
+          }
+        }
+      }
+  }],
   "version" : 3
 }
